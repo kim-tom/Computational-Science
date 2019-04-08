@@ -1,19 +1,16 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <time.h>
-#define N 3
+#define N 500
 double product(double y[][N], double z[][N],int i,int j,int k){
-  return y[i][k]*z[k][j]; //y[i][k]*z[j][k];
-}
-double opt_product(double y[][N], double z[][N],int i,int j,int k){
-  return y[i][k]*z[j][k];
+  return y[i][k]*z[k][j];
 }
 void initYZ(double y[][N],double z[][N]){
   int i,j;
   for(i=0;i<N;i++){
     for(j=0;j<N;j++){
-      y[i][j]=i-j;
-      z[i][j]=i+j;
+      y[i][j]=1;
+      z[i][j]=1;
     }
   }
 }
@@ -23,18 +20,32 @@ int main(int argc, char *argv[]){
   static double x[N][N],y[N][N],z[N][N];
   double r,time_spent;
   clock_t begin = clock();
-  double (*funcp)(double (*)[N], double (*)[N],int,int,int);
-  if(flag==1){
-    funcp=&product;
-  }else{
-    funcp=&opt_product;
-  }
+
   initYZ(y,z);
   for(i=0;i<N;i++){
     for(j=0;j<N;j++){
       r=0;
       for(k=0;k<N;k++){
-        r=r+(*funcp)(y,z,i,j,k);
+        switch(flag){
+          case 1:
+            r=r+product(y,z,i,j,k);
+            break;
+          case 2:
+            r=r+product(y,z,i,k,j);
+            break;
+          case 3:
+            r=r+product(y,z,j,i,k);
+            break;
+          case 4:
+            r=r+product(y,z,j,k,i);
+            break;
+          case 5:
+            r=r+product(y,z,k,i,j);
+            break;
+          case 6:
+            r=r+product(y,z,k,j,i);
+            break;
+        }
       }
       x[i][j]=r;
     }
