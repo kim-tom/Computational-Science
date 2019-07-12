@@ -1,0 +1,42 @@
+
+ Performance counter stats for './exe/nbody_seq.exe -n 8192':
+
+      42109.209886      task-clock (msec)         #    0.999 CPUs utilized          
+                27      context-switches          #    0.001 K/sec                  
+                 5      cpu-migrations            #    0.000 K/sec                  
+               500      page-faults               #    0.012 K/sec                  
+   109,481,414,288      cycles                    #    2.600 GHz                    
+   210,285,138,074      instructions              #    1.92  insn per cycle         
+    13,584,722,282      branches                  #  322.607 M/sec                  
+         1,795,641      branch-misses             #    0.01% of all branches        
+
+      42.145313850 seconds time elapsed
+
+
+ Performance counter stats for './exe/nbody_ilp.exe -n 8192':
+
+       6845.326968      task-clock (msec)         #    0.993 CPUs utilized          
+                 7      context-switches          #    0.001 K/sec                  
+                 7      cpu-migrations            #    0.001 K/sec                  
+               501      page-faults               #    0.073 K/sec                  
+    16,428,998,165      cycles                    #    2.400 GHz                    
+    31,825,213,422      instructions              #    1.94  insn per cycle         
+     1,914,373,243      branches                  #  279.661 M/sec                  
+           497,586      branch-misses             #    0.03% of all branches        
+
+       6.891997706 seconds time elapsed
+
+
+ Performance counter stats for './exe/nbody_mp.exe -n 8192':
+
+       8902.382186      task-clock (msec)         #   29.854 CPUs utilized          
+                78      context-switches          #    0.009 K/sec                  
+                42      cpu-migrations            #    0.005 K/sec                  
+               633      page-faults               #    0.071 K/sec                  
+    21,375,806,547      cycles                    #    2.401 GHz                    
+    32,586,748,425      instructions              #    1.52  insn per cycle         
+     2,158,370,201      branches                  #  242.449 M/sec                  
+           623,914      branch-misses             #    0.03% of all branches        
+
+       0.298194676 seconds time elapsed
+

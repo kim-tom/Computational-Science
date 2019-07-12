@@ -1,0 +1,18 @@
+/* c[0]+=A(i,k) * B.loadv(k,j); */
+        /* c[1]+=A(i+1,k) * B.loadv(k,j); */
+        /* c[2]+=A(i+2,k) * B.loadv(k,j); */
+        /* c[3]+=A(i+3,k) * B.loadv(k,j); */
+        /* c[4]+=A(i+4,k) * B.loadv(k,j); */
+        /* c[5]+=A(i+5,k) * B.loadv(k,j); */
+        /* c[6]+=A(i+6,k) * B.loadv(k,j); */
+        /* c[7]+=A(i+7,k) * B.loadv(k,j); */
+        //cの変数を10個くらいに増やす。この命令が一回に5サイクルかかってもったいない。OpenMP使えば更に早くなる。
+
+/* C.storev(i+0,j,c[0]); */
+      /* C.storev(i+1,j,c[1]); */
+      /* C.storev(i+2,j,c[2]); */
+      /* C.storev(i+3,j,c[3]); */
+      /* C.storev(i+4,j,c[4]); */
+      /* C.storev(i+5,j,c[5]); */
+      /* C.storev(i+6,j,c[6]); */
+      /* C.storev(i+7,j,c[7]); */

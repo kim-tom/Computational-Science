@@ -1,0 +1,78 @@
+error: C(1469,1816) = 510.951202 != 2554.756104
+28 threads used.
+A = 2048 x 2048 (16777216 bytes)
+B = 2048 x 2048 (16777216 bytes)
+C = 2048 x 2048 (16777216 bytes)
+repeat C += A * B 5 times
+85899345920 flops, total 50331648 bytes
+31273053291 clocks
+14.891993 sec
+2.747 flops/clock
+5.768156 GFLOPS
+0.728 clocks/muladd
+
+ Performance counter stats for './exe/mm_seq.exe -M 2048 -N 2048 -K 2048 -r 5':
+
+      15098.129115      task-clock (msec)         #    1.002 CPUs utilized          
+                79      context-switches          #    0.005 K/sec                  
+                45      cpu-migrations            #    0.003 K/sec                  
+            12,708      page-faults               #    0.842 K/sec                  
+    36,274,775,203      cycles                    #    2.403 GHz                    
+    33,095,941,196      instructions              #    0.91  insn per cycle         
+     5,512,458,594      branches                  #  365.109 M/sec                  
+         2,836,407      branch-misses             #    0.05% of all branches        
+
+      15.065237871 seconds time elapsed
+
+28 threads used.
+A = 2048 x 2048 (16777216 bytes)
+B = 2048 x 2048 (16777216 bytes)
+C = 2048 x 2048 (16777216 bytes)
+repeat C += A * B 5 times
+85899345920 flops, total 50331648 bytes
+8373166002 clocks
+3.987240 sec
+10.259 flops/clock
+21.543561 GFLOPS
+0.195 clocks/muladd
+OK: max relative error = 0.000000
+
+ Performance counter stats for './exe/mm_ilp.exe -M 2048 -N 2048 -K 2048 -r 5':
+
+       4149.619568      task-clock (msec)         #    1.003 CPUs utilized          
+                32      context-switches          #    0.008 K/sec                  
+                33      cpu-migrations            #    0.008 K/sec                  
+            12,706      page-faults               #    0.003 M/sec                  
+     9,990,390,215      cycles                    #    2.408 GHz                    
+    14,872,295,793      instructions              #    1.49  insn per cycle         
+       787,301,368      branches                  #  189.729 M/sec                  
+           433,069      branch-misses             #    0.06% of all branches        
+
+       4.136878619 seconds time elapsed
+
+28 threads used.
+A = 2048 x 2048 (16777216 bytes)
+B = 2048 x 2048 (16777216 bytes)
+C = 2048 x 2048 (16777216 bytes)
+repeat C += A * B 5 times
+85899345920 flops, total 50331648 bytes
+416957343 clocks
+0.198552 sec
+206.015 flops/clock
+432.628676 GFLOPS
+0.010 clocks/muladd
+OK: max relative error = 0.000000
+
+ Performance counter stats for './exe/mm_mp.exe -M 2048 -N 2048 -K 2048 -r 5':
+
+       5437.042928      task-clock (msec)         #   14.789 CPUs utilized          
+               152      context-switches          #    0.028 K/sec                  
+                31      cpu-migrations            #    0.006 K/sec                  
+            12,707      page-faults               #    0.002 M/sec                  
+    13,087,982,448      cycles                    #    2.407 GHz                    
+    15,821,207,312      instructions              #    1.21  insn per cycle         
+       866,303,681      branches                  #  159.334 M/sec                  
+           439,080      branch-misses             #    0.05% of all branches        
+
+       0.367631929 seconds time elapsed
+
